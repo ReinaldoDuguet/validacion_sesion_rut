@@ -8,9 +8,9 @@ if (isset($_POST["submit"])) {
             header("Location: contacto.php");
         }else{
             $rut = $_POST["rut"];
-            $con = new mysqli("localhost","root","","prueba_datos");
+            $con = new mysqli("ubicacion_bd","nombre_usuario","password","base_datos");
             
-            $sql = "SELECT * FROM usuarios WHERE rut like '$rut'";
+            $sql = "SELECT * FROM usuarios WHERE rut like '$rut'"; //usuarios corresponde al nombre de la tabla contenida en base_datos
             $res = $con->query($sql);
 
             if ($fila = $res->fetch_assoc()) {
